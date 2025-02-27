@@ -182,11 +182,17 @@ const showProducts = () => {
       let str = "<div class='row'>";
       products.map((value) => {
         str += `
-          <div class='box'>
-          <h3>${value.name}</h3>
-          <p>${value.desc}</p>
-          <h4>$${value.price}</h4>
-          <button onclick=addToCart(${value.id})>Add to Cart</button>
+
+          <div class="col-md-4 mb-4 ">
+            <div class="card">
+              <img src="${value.image}" class="card-img-top" alt="${value.name}">
+              <div class="card-body">
+                <h5 class="card-title">${value.name}</h5>
+                <p class="card-text">${value.desc}</p>
+                <h6 class="card-subtitle mb-2 text-muted">$${value.price}</h6>
+                <button class="btn btn-primary" onclick="addToCart(${value.id})">Add to Cart</button>
+              </div>
+            </div>
           </div>
           `;
       });
